@@ -1,0 +1,44 @@
+{
+  "name": "JourTempo",
+  "version": "1.0.0",
+  "description": "Read the French Tempo electricity tariff colour (blue, white, red) for today and tomorrow on ESP32 and ESP8266, from the free keyless Jour Tempo JSON API (colours published by RTE). Handles network loss and expired data, never returns a guessed colour.",
+  "keywords": "tempo, edf, rte, electricity, tariff, france, energy, home automation, esp32, esp8266",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jourtempo/tempo-esp32.git"
+  },
+  "authors": [
+    {
+      "name": "Jour Tempo",
+      "email": "contact@jourtempo.fr",
+      "url": "https://jourtempo.fr",
+      "maintainer": true
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://jourtempo.fr/api/",
+  "frameworks": "arduino",
+  "platforms": ["espressif32", "espressif8266"],
+  "dependencies": [
+    {
+      "owner": "bblanchon",
+      "name": "ArduinoJson",
+      "version": "^7.0.0"
+    }
+  ],
+  "export": {
+    "exclude": ["extras"]
+  },
+  "examples": [
+    {
+      "name": "SerialMonitor",
+      "base": "examples/SerialMonitor",
+      "files": ["SerialMonitor.ino"]
+    },
+    {
+      "name": "RgbLed",
+      "base": "examples/RgbLed",
+      "files": ["RgbLed.ino"]
+    }
+  ]
+}

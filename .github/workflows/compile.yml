@@ -1,0 +1,32 @@
+name: Compile
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  host-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Core logic test (host)
+        working-directory: extras/test
+        run: |
+          g++ -std=c++17 -Wall -Wextra -DJOURTEMPO_NO_JSON -I../../src test_core.cpp ../../src/JourTempoCore.cpp -o test_core
+          ./test_core
+
+  platformio:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        board: [esp32dev, nodemcuv2]
+        example: [SerialMonitor, RgbLed]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install platformio
+      - name: Compile ${{ matrix.example }} for ${{ matrix.board }}
+        run: pio ci --lib="." --board=${{ matrix.board }} --project-option="lib_deps=bblanchon/ArduinoJson@^7.0.0" examples/${{ matrix.example }}/${{ matrix.example }}.ino

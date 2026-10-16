@@ -1,0 +1,35 @@
+#######################################
+# Syntax colouring for JourTempo
+#######################################
+
+# Classes and types (KEYWORD1)
+JourTempo	KEYWORD1
+Color	KEYWORD1
+Result	KEYWORD1
+
+# Methods (KEYWORD2)
+begin	KEYWORD2
+setUpdateInterval	KEYWORD2
+update	KEYWORD2
+today	KEYWORD2
+tomorrow	KEYWORD2
+remainingDays	KEYWORD2
+hasData	KEYWORD2
+isExpired	KEYWORD2
+todayDate	KEYWORD2
+tomorrowDate	KEYWORD2
+expiresAt	KEYWORD2
+collectedAt	KEYWORD2
+lastResult	KEYWORD2
+lastHttpCode	KEYWORD2
+secondsSinceUpdate	KEYWORD2
+now	KEYWORD2
+colorName	KEYWORD2
+colorCode	KEYWORD2
+resultName	KEYWORD2
+
+# Constants (LITERAL1)
+URL	LITERAL1
+ATTRIBUTION	LITERAL1
+MIN_INTERVAL_MINUTES	LITERAL1
+DEFAULT_INTERVAL_MINUTES	LITERAL1
