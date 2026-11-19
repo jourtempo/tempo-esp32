@@ -1,6 +1,6 @@
 {
   "name": "JourTempo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Read the French Tempo electricity tariff colour (blue, white, red) for today and tomorrow on ESP32 and ESP8266, from the free keyless Jour Tempo JSON API (colours published by RTE). Handles network loss and expired data, never returns a guessed colour.",
   "keywords": "tempo, edf, rte, electricity, tariff, france, energy, home automation, esp32, esp8266",
   "repository": {
